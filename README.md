@@ -22,9 +22,11 @@ scrapy crawl Spidername -o Output.json
 #try to find data
 
 scrapy shell https://www.website.com
+
 scrapy shell https://www.tripadvisor.com.tr/Restaurants-g293974-Istanbul.html/
 
 fetch("https://www.website.com")
+
 fetch("https://www.tripadvisor.com.tr/Restaurants-g293974-Istanbul.html/")
 
 response.css("._3a1XQ88S::text").extract() (find specific data)
