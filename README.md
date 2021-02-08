@@ -33,5 +33,7 @@ response.css("._3a1XQ88S::text").extract() (find specific data)
 
 #extra
 view(response) (open website)
+
 print response.text  (website source code)
+
 exit = exit scrapy shell
