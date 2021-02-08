@@ -1,30 +1,31 @@
 # Web_scraping
  web scraping with python scrapy 
 
-#install scrapy
+# Install scrapy
 
 conda install -c conda-forge scrapy or pip install Scrapy 
 
-#create scrapy project
+# Proje oluşturma
 
 scrapy startproject example 
 
-#create spider
+# Spider oluşturma
 
 scrapy genspider example2 https://www.website.com 
 
-#run spider
+# Spider çalıştırma
 
 scrapy crawl example2 
 
 scrapy crawl Spidername -o Output.json
 
+setting.py dosyasına çıkışta istenen dosya türü eklenebilir.
 
+FEED_FORMAT = "csv"
 
+FEED_URI = "Scraping.csv"
 
-
-
-#try to find data
+# Alınacak verileri bulmak için scrapy shell'de deneme yapılır
 
 scrapy shell https://www.website.com
 
@@ -34,12 +35,11 @@ fetch("https://www.website.com")
 
 fetch("https://www.tripadvisor.com.tr/Restaurants-g293974-Istanbul.html/")
 
-response.css("._3a1XQ88S::text").extract() (find specific data)
+istenen dataları bulmak için css selector veya xpath kullanılabilir
 
+response.css("._3a1XQ88S::text").extract() 
+response.xpath('//p/strong/text()').extract()
 #extra
 
-view(response) (open website)
+print response.text  (website kaynak kodları)
 
-print response.text  (website source code)
-
-exit = exit scrapy shell
